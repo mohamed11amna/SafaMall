@@ -40,10 +40,10 @@ class DatabaseSeeder extends Seeder
 
             $category = \App\Models\Category::create([
                 'name' => $categoryName,
-                'name_ar' => 'قسم ' . $categoryName, // Placeholder Arabic name
+                'name_ar' => 'قسم ' . $categoryName, 
                 'slug' => \Illuminate\Support\Str::slug($categoryName),
                 'description' => 'Beautiful ' . strtolower($categoryName) . ' for your home.',
-                'description_ar' => 'وصف جميل لقسم ' . $categoryName, // Placeholder Arabic description
+                'description_ar' => 'وصف جميل لقسم ' . $categoryName, 
                 'image' => $categoryImage,
             ]);
 
@@ -54,10 +54,10 @@ class DatabaseSeeder extends Seeder
                 \App\Models\Product::create([
                     'category_id' => $category->id,
                     'name' => $categoryName . ' ' . $productNum,
-                    'name_ar' => 'منتج ' . $categoryName . ' ' . $productNum, // Placeholder Arabic name
+                    'name_ar' => 'منتج ' . $categoryName . ' ' . $productNum, 
                     'slug' => \Illuminate\Support\Str::slug($categoryName . ' ' . $productNum),
                     'description' => 'Experience the quality and elegance of this ' . strtolower($categoryName) . ' piece, perfect for your space.',
-                    'description_ar' => 'استمتع بجودة وأناقة هذا المنتج المثالي لمساحتك.', // Placeholder Arabic description
+                    'description_ar' => 'استمتع بجودة وأناقة هذا المنتج المثالي لمساحتك.', 
                     'price' => rand(50, 900) + 0.99,
                     'image' => $relativePath,
                 ]);
